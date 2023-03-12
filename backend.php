@@ -1,9 +1,6 @@
 <?php
 include ("connection.php");
 $tag = $_POST['tag'];
-// echo "hello";
-// echo $tag;
-// $tag = 1;
 
 $query = $mysqli->prepare("SELECT * FROM news_articles na JOIN article_categories ac ON na.tag = ac.tag_id WHERE ac.tag_name = ?");
 $query->bind_param("s",$tag);
